@@ -1,0 +1,27 @@
+﻿<Window x:Class="KeyLogReset.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KeyLogReset"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="StartStopBtn" Height="20" Margin="10" Width="80" Click="StartStopBtn_Click" ></Button>
+                <Button x:Name="UpdateBtn" Content="Обновить" Height="20" Margin="10" Width="80" Click="UpdateBtn_Click" ></Button>
+                <Button x:Name="RemoveBTN" Content="Очистить лог" Height="20" Margin="10" Width="80" Click="RemoveBTN_Click" ></Button>
+            </StackPanel>
+            <TextBlock Text="Выбор проги" HorizontalAlignment="Center" Margin="10"></TextBlock>
+            <ComboBox x:Name="ProgCMB" SelectionChanged="ProgCMB_SelectionChanged" ></ComboBox>
+
+            <DataGrid x:Name="EventGrid" Margin="10" Width="250" Height="200" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Кнопка" Binding="{Binding Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Количество нажатий" Binding="{Binding Count}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
